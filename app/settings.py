@@ -131,6 +131,17 @@ else:
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=8),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "<PROJETO> API",
+    "DESCRIPTION": "API para o projeto <descreva aqui seu projeto>.",
+    "VERSION": "1.0.0",
+}
+
 AUTH_USER_MODEL = "core.User"
 
 REST_FRAMEWORK = {
@@ -143,19 +154,8 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
 }
 
-SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(hours=8),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
-}
-
-SPECTACULAR_SETTINGS = {
-    "TITLE": "<PROJETO> API",
-    "DESCRIPTION": "API para o projeto <descreva aqui seu projeto>.",
-    "VERSION": "1.0.0",
-}
-
 PASSAGE_APP_ID = os.getenv("PASSAGE_APP_ID", "app_id")
 PASSAGE_API_KEY = os.getenv("PASSAGE_API_KEY", "api_key")
 PASSAGE_AUTH_STRATEGY = 2
 
-print(f"{MODE = } \n{MEDIA_URL = } \n{DATABASES = }")
+print(f"{MODE = } \n{MEDIA_URL = } \n{DATABASES = }")       
